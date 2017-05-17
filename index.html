@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	<body>
+		<p>
+	 		<input id="upload" type="file" id="input"  multiple="multiple">  
+	 	</p>
+	 	<p>
+
+	 	</p>
+	 </body>
+	 <script type="text/javascript" src="zfileupload.js"></script>
+	 <script>
+	 	var zupload=new ZUpload({
+			before:function(t,callback){
+				//上传操作前执行的方法，可不设置，如果设置，请执行callback()
+				
+				callback();
+			},
+			url:' ',//动态赋值
+			dom:'#upload',//要点击上传的file文件框
+			success:function(data){
+				alert('成功');
+				console.log(data);
+				//上传完成后执行的操作
+			},
+			progress:function(data){
+				//未实现
+			},
+			error:function(err){
+				//出现异常时执行的操作
+			}
+		});
+	 </script>
+</html>
